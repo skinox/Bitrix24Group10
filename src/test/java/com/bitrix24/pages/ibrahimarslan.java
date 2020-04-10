@@ -1,8 +1,7 @@
 package com.bitrix24.pages;
 
-public class Pages {
-
+public class ibrahimarslan {
     public static void main(String[] args) {
-        System.out.println("Selenium");
+        System.out.println("just for test");
     }
 }
