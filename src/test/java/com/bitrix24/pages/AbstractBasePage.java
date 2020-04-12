@@ -30,9 +30,9 @@ public AbstractBasePage(){
      */
     public void navigateTo(String componentName){
         // all component name starts with capital letter like Drive, Mail
-        componentName = String.valueOf(componentName.charAt(0)).toUpperCase()
+        String componentNameCapitalized = String.valueOf(componentName.charAt(0)).toUpperCase()
                 .concat(componentName.substring(1).toLowerCase());
-        String locator = "//span[contains(text(),'"+componentName+"')]";
+        String locator = "//span[contains(text(),'"+componentNameCapitalized+"')]";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).click();
     }
 
