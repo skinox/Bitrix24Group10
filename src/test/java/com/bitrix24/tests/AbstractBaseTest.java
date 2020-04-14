@@ -68,8 +68,8 @@ public abstract class AbstractBaseTest {
                 e.printStackTrace();
                 throw new RuntimeException("Failed to attach screenshot");
             }
-        }else if (testResult.getStatus() == ITestResult.SUCCESS){
-            extentTest.pass(testResult.getName());
+//        }else if (testResult.getStatus() == ITestResult.SUCCESS){
+//            extentTest.pass(testResult.getName());
         }else if (testResult.getStatus() == ITestResult.SKIP){
             extentTest.skip(testResult.getName());
         }
