@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends AbstractBasePage {
 
+    //=========== Login Page =====================
+
     @FindBy(className = "log-popup-header")
     private WebElement authorizationLogo;
 
@@ -30,6 +32,8 @@ public class LoginPage extends AbstractBasePage {
 
     @FindBy(id = "USER_REMEMBER")
     private WebElement remember;
+
+    //================ Forgot Password Page ==================
 
     @FindBy(className = "log-popup-header")
     private WebElement forgotGetPasswordLogo;
