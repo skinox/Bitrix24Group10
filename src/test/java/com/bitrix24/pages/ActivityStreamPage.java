@@ -63,5 +63,36 @@ public class ActivityStreamPage extends AbstractBasePage{
     //##################################################################################################################
 
 
+    // WebElements and Methods for story 1.8
+
+    @FindBy(id = "microoPostFormLHE_blogPostForm_inner")
+    private WebElement message;
+
+    @FindBy(id ="lhe_button_title_blogPostForm")
+    private WebElement topicIcon ;
+
+    @FindBy (id = "POST_TITLE")
+    private WebElement topicMessage;
+
+
+
+    public void clickMessage(){
+        BrowserUtilities.waitForPageToLoad(10);
+        message.click();
+    }
+
+    public WebElement getTopicIcon(){
+        BrowserUtilities.waitForPageToLoad(10);
+
+        return topicIcon;
+    }
+    public WebElement getTopicMessage(){
+        BrowserUtilities.waitForPageToLoad(10);
+
+        return topicMessage;
+    }
+//##################################################################################################################
+
+
 
 }
