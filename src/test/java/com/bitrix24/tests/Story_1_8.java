@@ -1,5 +1,6 @@
 package com.bitrix24.tests;
 
+import com.bitrix24.pages.ActivityStreamPage;
 import com.bitrix24.pages.LoginPage;
 import com.bitrix24.utilities.BrowserUtilities;
 import org.openqa.selenium.By;
@@ -22,14 +23,15 @@ public class Story_1_8 extends AbstractBaseTest{
     public void story_1_8(){
         LoginPage loginPage = new LoginPage();
         loginPage.login();
-        BrowserUtilities.waitForPageToLoad(10);
 
-        driver.findElement(By.id("microoPostFormLHE_blogPostForm_inner")).click();
-        BrowserUtilities.wait(2);
-        driver.findElement(topicIcon).click();
+        ActivityStreamPage activityStreamPage = new ActivityStreamPage();
+        BrowserUtilities.waitForPageToLoad(20);
 
-        BrowserUtilities.wait(1);
-        Assert.assertTrue(driver.findElement(topicMessage).isDisplayed(),"Topic");
+        activityStreamPage.clickMessage();
+        BrowserUtilities.wait(5);
+        activityStreamPage.getTopicIcon().click();
+
+        Assert.assertTrue(activityStreamPage.getTopicMessage().isDisplayed(),"Topic");
 
 
 
