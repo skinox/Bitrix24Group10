@@ -64,9 +64,11 @@ public class ActivityStreamPage extends AbstractBasePage{
 
 
     // WebElements and Methods for story 1.8
+    @FindBy(id = "feed-add-post-form-tab-message")
+    private WebElement message;
 
     @FindBy(id = "microoPostFormLHE_blogPostForm_inner")
-    private WebElement message;
+    private WebElement sendMessage;
 
     @FindBy(id ="lhe_button_title_blogPostForm")
     private WebElement topicIcon ;
