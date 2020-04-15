@@ -1,5 +1,6 @@
 package com.bitrix24.pages;
 
+import com.bitrix24.utilities.BrowserUtilities;
 import com.bitrix24.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -19,6 +20,18 @@ protected WebDriverWait wait = new WebDriverWait(driver,20);
 
     @FindBy(id = "user-name")
     protected WebElement currentUserEmail;
+
+    @FindBy(id = "user-block")
+    protected WebElement userBlockIcon;
+
+    @FindBy(xpath = "//span[text()='Log out']")
+    protected WebElement logoutButton;
+
+    @FindBy(className = "help-block-icon")
+    protected WebElement helpIcon;
+
+
+
 
 public AbstractBasePage(){
     PageFactory.initElements(Driver.getDriver(), this);
@@ -54,6 +67,17 @@ public AbstractBasePage(){
         wait.until(ExpectedConditions.visibilityOf(currentUserEmail));
         return currentUserEmail.getText().trim();
     }
+
+    public void logout(){
+        BrowserUtilities.wait(2);
+        userBlockIcon.click();
+        BrowserUtilities.wait(3);
+        wait.until(ExpectedConditions.visibilityOf(logoutButton)).click();
+        BrowserUtilities.wait(2);
+
+    }
+
+
 
 
 
