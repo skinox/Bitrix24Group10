@@ -95,6 +95,31 @@ public class ActivityStreamPage extends AbstractBasePage{
     }
 //##################################################################################################################
 
+    //Web Elements and methods for user story 1.6
+    @FindBy(id = "bx-b-mention-blogPostForm")
+    protected WebElement addMention;
 
+    @FindBy(id= "destDepartmentTab_mention61209971")
+    protected WebElement contact;
+
+    @FindBy(xpath = "//span[@class='feed-add-post-destination-text' and text()='helpdesk58@cybertekschool.com']")
+    protected WebElement addedContact;
+
+    public void addMention () {
+        message.click();
+        BrowserUtilities.waitForPageToLoad(10);
+        addMention.click();
+        BrowserUtilities.waitForPageToLoad(10);
+        contact.click();
+        BrowserUtilities.waitForPageToLoad(10);
+
+    }
+    public String getContactName (){
+        return  contact.getText();
+    }
+
+    public String getAddedContactName(){
+        return addedContact.getText();
+    }
 
 }
