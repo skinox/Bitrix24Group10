@@ -3,10 +3,7 @@ package com.bitrix24.tests;
 import com.bitrix24.pages.LoginPage;
 import com.bitrix24.utilities.BrowserUtilities;
 import com.bitrix24.utilities.ConfigurationReader;
-import com.bitrix24.utilities.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
