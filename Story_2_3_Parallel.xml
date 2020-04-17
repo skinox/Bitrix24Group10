@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="User Story 2.3 Parallel" parallel="methods" thread-count="2">
+    <test name="User Story 2.3">
+        <classes>
+            <class name="com.bitrix24.tests.Story_2_3"/>
+        </classes>
+    </test>
+</suite>

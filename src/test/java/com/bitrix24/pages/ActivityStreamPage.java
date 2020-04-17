@@ -93,6 +93,7 @@ public class ActivityStreamPage extends AbstractBasePage{
 
         return topicMessage;
     }
+
 //##################################################################################################################
 
 

@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import static java.util.logging.Level.OFF;
+
 public class Driver {
     //same for everyOne
     private static WebDriver driver ;
@@ -25,9 +27,11 @@ public class Driver {
             String browser = ConfigurationReader.getProperty("browser");
             switch (browser){
                 case "chrome":
-                    WebDriverManager.chromedriver().version("79").setup();
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--start-maximized");
+                    java.util.logging.Logger.getLogger("org.openqa.selenium").setLevel(OFF);//ignore selenium unnecessary logs
+                    System.setProperty("webdriver.chrome.silentOutput", "true"); //ignore chrome version logs
                     driver = new ChromeDriver(chromeOptions);
                     break;
                 case "chromeheadless":
